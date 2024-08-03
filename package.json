@@ -1,0 +1,21 @@
+{
+  "name": "watodo",
+  "version": "1.0.0",
+  "description": "A To-Do List project created in JavaScript with the implementation of  Webpack, JSON, and WebStorage API.",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "live": "webpack serve"
+  },
+  "keywords": [],
+  "author": "poufsadev",
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
