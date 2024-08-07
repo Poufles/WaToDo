@@ -1,0 +1,154 @@
+.landing {
+    /* background-image: radial-gradient(circle at center, transparent 50%, yellow 50%); */
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* REGISTER CSS STYLE BELOW */
+.container.registerpage {
+    border-bottom-right-radius: 100%;
+    overflow: hidden;
+    transition: var(--t3s);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container.registerpage.initial {
+    width: 0px;
+    height: 0px;
+}
+
+.container.registerpage.final {
+    width: 100dvw;
+    height: 100dvh;
+}
+
+.container.registerpage.noradius {
+    border-bottom-right-radius: 0% !important;
+}
+
+.registerpage .contents {
+    background-image: var(--primary-gradient);
+    color: var(--primary-color);
+    height: 100dvh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerpage .logo-container {
+    height: max-content;
+}
+
+.registerpage .sides {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerpage .description .title {
+    font-family: var(--font-stack-title);
+    font-size: 6rem;
+}
+
+.registerpage .description .desc {
+    font-size: 2rem;
+    margin-top: -15px;
+    text-align: center;
+}
+
+.registerpage .register {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.registerpage .register :is(div:not(:last-of-type), button) {
+    --_validated: #0fff27;
+    --_denied: #ffad3b;
+    --_margin-label-input: 4px;
+    --_padding-sides: 15px;
+    border-radius: 30px;
+    padding: 9px var(--_padding-sides);
+    width: 500px;
+    transition: var(--t3s);
+}
+
+.registerpage .register div:not(:last-of-type) {
+    background-color: var(--accent-color);
+    border: 2px solid var(--primary-color);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+}
+
+.registerpage .register div:has(input:focus) {
+    box-shadow: 0 0 15px -2px var(--primary-color);
+}
+
+.registerpage .register div.validated {
+    border: 2px solid var(--_validated);
+    box-shadow: 0 0 15px -2px var(--_validated);
+}
+
+.registerpage .register div.denied {
+    border: 2px solid var(--_denied);
+    box-shadow: 0 0 15px -2px var(--_denied);
+}
+
+.registerpage .register div label {
+    position: absolute;
+    bottom: calc(100% + var(--_margin-label-input));
+    left: var(--_padding-sides);
+}
+
+.registerpage .register div input {
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.registerpage .register div svg {
+    width: 30px;
+    height: 30px;
+}
+
+.registerpage .register div input::placeholder {
+    color: var(--primary-color);
+    filter: brightness(0.8);
+}
+
+.registerpage .register div p {
+    font-size: 0.8rem;
+    transition: var(--t3s);
+    position: absolute;
+    bottom: calc(100% + var(--_margin-label-input));
+    right: var(--_padding-sides);
+}
+
+.registerpage .register div p.validated {
+    color: var(--_validated);
+}
+
+.registerpage .register div p.denied {
+    color: var(--_denied);
+}
+
+.registerpage .register button {
+    border: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 52px;
+}

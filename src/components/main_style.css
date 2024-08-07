@@ -1,0 +1,31 @@
+@import url('https://fonts.cdnfonts.com/css/feijoada');
+@import url('https://fonts.cdnfonts.com/css/futura-std-4');
+
+:root {
+    --primary-color: #FFFFFD;
+    --secondary-color: #7306D8;
+    --accent-color: #4C2B8E;
+    --alt-color: #cb2204;
+    --primary-gradient: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    --font-stack-title: 'Feijoada', sans-serif;;
+    --font-stack-normal: 'Futura Std', sans-serif;
+    --t3s: 0.3s;
+
+    font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--primary-color);
+    overflow: hidden;
+}
+
+.container {
+    font-family: var(--font-stack-normal);
+    position: relative;
+}

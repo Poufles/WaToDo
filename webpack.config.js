@@ -4,7 +4,7 @@ const HWPP = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        bundle: path.resolve(__dirname, './src/scripts/main.js'),
+        bundle: path.resolve(__dirname, './src/scripts/index.js'),
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -23,7 +23,7 @@ module.exports = {
         compress: true,
         historyApiFallback: true,
     },
-    modules: {
+    module: {
         rules: [
             {
                 test: /\.css$/i,
@@ -38,7 +38,7 @@ module.exports = {
         new HWPP({
            title: 'WaToDo - Get It Done',
            filename: 'index.html',
-           template: '.src/templates/index.html', 
+           template: './src/templates/index.html', 
         }),
     ],
 };

@@ -8,6 +8,7 @@ const User = function () {
     let notes;
     let projects;
     let lastSession;
+    let loggedin;
 
     const Login = (loginDetails) => {
         const data = session.retrieveData();
@@ -21,6 +22,7 @@ const User = function () {
                 notes = client.notes;
                 projects = client.projects;
                 lastSession = client.lastSession;
+                loggedin = client.loggedin;
 
                 console.log('Logged In');
                 break;
@@ -36,6 +38,7 @@ const User = function () {
         notes = undefined;
         projects = undefined;
         lastSession = undefined;
+        loggedin = undefined;
     };
 
     const Register = (regDetails) => {
@@ -74,7 +77,7 @@ const User = function () {
         session.updateData();
     };
     const getUserDetails = () => {
-        return { name, password, bio, level, notes, projects, lastSession };
+        return { name, password, bio, level, notes, projects, lastSession, loggedin };
     };
 
     return {
