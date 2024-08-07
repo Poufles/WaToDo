@@ -29,3 +29,29 @@ body {
     font-family: var(--font-stack-normal);
     position: relative;
 }
+
+.author-container {
+    color: var(--primary-color);
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.author-container .links {
+    list-style-type: none;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: right;
+}
+
+.author-container .links svg {
+    fill: var(--primary-color);
+    width: 20px;
+    height: 20px;
+}

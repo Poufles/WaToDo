@@ -35,18 +35,122 @@
 .registerpage .contents {
     background-image: var(--primary-gradient);
     color: var(--primary-color);
+    min-width: 100dvw;
     height: 100dvh;
     padding: 30px;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.cloud {
+    --_main-cloud: 500px;
+    --_top-cloud: 400px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#cloud-1 {
+    background-color: var(--primary-color);
+    width: var(--_main-cloud);
+    height: var(--_main-cloud);
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 100%;
+}
+
+#cloud-2 {
+    background-color: var(--primary-color);
+    width: calc(var(--_main-cloud) / 1.5);
+    height: calc(var(--_main-cloud) / 1.5);
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: calc(100% - var(--_main-cloud) / 2);
+}
+
+#cloud-3 {
+    background-color: var(--primary-color);
+    width: calc(var(--_main-cloud) / 3);
+    height: calc(var(--_main-cloud) /3);
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: calc(100% - var(--_main-cloud) / 1.25);
+}
+
+#cloud-4 {
+    background-color: var(--primary-color);
+    width: var(--_top-cloud);
+    height: var(--_top-cloud);
+    transform: translate(-50%, 50%);
+    bottom: 100%;
+    left: 100%;
+}
+
+#cloud-5 {
+    background-color: var(--primary-color);
+    width: calc(var(--_top-cloud) / 2);
+    height: calc(var(--_top-cloud) / 2);
+    transform: translate(-50%, 50%);
+    bottom: 100%;
+    left: calc(100% - var(--_top-cloud) / 2);
+}
+
+#cloud-6 {
+    --_circle-diameter: 300px;
+    background-color: var(--primary-color);
+    width: var(--_circle-diameter);
+    height: var(--_circle-diameter);
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 0;
+}
+
+.registerpage .contents .peep, .registerpage .contents .peep-title {
+    position: absolute;
+}
+
+.registerpage .contents>#peep-1 {
+    height: 600px;
+    bottom: -10%;
+    left: 55%;
+}
+
+.registerpage .contents>#peep-2 {
+    height: 750px;
+    transform: rotateY(180deg);
+    bottom: -12%;
+    left: 70%;
 }
 
 .registerpage .logo-container {
     height: max-content;
 }
 
+.registerpage button.return {
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+    cursor: pointer;
+    width: max-content;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.registerpage button.return svg {
+    fill: var(--primary-color);
+    width: 15px;
+    height: 15px;
+}
+
+.registerpage button.return .title {
+    font-size: 0.65rem;
+}
+
 .registerpage .sides {
     height: 100%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -54,9 +158,18 @@
     justify-content: center;
 }
 
-.registerpage .description .title {
+.registerpage .description {
+    position: relative;
+}
+
+.registerpage .description .peep-title {
+    display: none;
+}
+
+.registerpage .description h1.title {
     font-family: var(--font-stack-title);
     font-size: 6rem;
+    text-align: center;
 }
 
 .registerpage .description .desc {
@@ -71,9 +184,10 @@
     gap: 35px;
 }
 
-.registerpage .register :is(div:not(:last-of-type), button) {
+.registerpage .register :is(div:not(:last-of-type), button.signup) {
     --_validated: #0fff27;
     --_denied: #ffad3b;
+    --_required: #ff4b4b;
     --_margin-label-input: 4px;
     --_padding-sides: 15px;
     border-radius: 30px;
@@ -105,6 +219,11 @@
     box-shadow: 0 0 15px -2px var(--_denied);
 }
 
+.registerpage .register div.required {
+    border: 2px solid var(--_required);
+    box-shadow: 0 0 15px -2px var(--_required);
+}
+
 .registerpage .register div label {
     position: absolute;
     bottom: calc(100% + var(--_margin-label-input));
@@ -120,9 +239,22 @@
     width: 100%;
 }
 
-.registerpage .register div svg {
-    width: 30px;
+.registerpage .register div input {
     height: 30px;
+}
+
+.registerpage .register div button.eye {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.registerpage .register div svg {
+    fill: var(--primary-color);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
 }
 
 .registerpage .register div input::placeholder {
@@ -130,7 +262,7 @@
     filter: brightness(0.8);
 }
 
-.registerpage .register div p {
+.registerpage .register>div>p {
     font-size: 0.8rem;
     transition: var(--t3s);
     position: absolute;
@@ -138,17 +270,92 @@
     right: var(--_padding-sides);
 }
 
-.registerpage .register div p.validated {
+.registerpage .register>div>p.validated {
     color: var(--_validated);
 }
 
-.registerpage .register div p.denied {
+.registerpage .register>div>p.denied {
     color: var(--_denied);
 }
 
-.registerpage .register button {
+.registerpage .register>div>p.required {
+    color: var(--_required);
+}
+
+.registerpage .register .action-container {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerpage .register button.signup {
+    background-image: linear-gradient(120deg, #000 var(--_percent), var(--primary-color) calc(var(--_percent) + 0.5%));
     border: 0;
-    font-size: 1rem;
-    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-stack-normal);
+    font-size: 1.2rem;
     height: 52px;
+    transition: 
+        var(--t3s),
+        --_percent var(--t3s);
+}
+
+.registerpage .register button.signup:hover {
+    --_percent: 50%;
+}
+
+.registerpage .register button.signup.active {
+    --_percent: 100%;
+}
+
+.registerpage .register button.signup.pressed {
+    transform: scale(0.9);
+}
+
+.registerpage .register button.signup p {
+    color: var(--primary-color);
+    mix-blend-mode: difference;
+}
+
+@property --_percent {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+.registerpage .register .login-option {
+    --_font-s: 0.85rem;
+    font-size: var(--_font-s);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerpage .register .login-option #login {
+    background-color: transparent;
+    border: 0;
+    color: #dbff0f;
+    cursor: pointer;
+    font-family: var(--font-stack-normal);
+    font-size: var(--_font-s);
+    padding: 0;
+    text-decoration: underline;
+    transition: var(--t3s);
+}
+
+.registerpage .register .login-option #login:hover {
+    color: #53ff0f;
+}
+
+.registerpage .author-container {
+    color: var(--secondary-color);
+    bottom: 10px;
+    right: 10px;
+}
+
+.author-container .links svg {
+    fill: var(--secondary-color);
 }

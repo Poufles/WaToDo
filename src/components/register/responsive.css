@@ -1,0 +1,185 @@
+@media screen and (max-width: 1500px) {
+    .registerpage .contents>#peep-1 {
+        height: 450px;
+        bottom: -10%;
+    }
+
+    .registerpage .contents>#peep-2 {
+        height: 500px;
+        bottom: -4%;
+    }
+
+    .registerpage .sides {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cloud {
+        --_main-cloud: 400px;
+        --_top-cloud: 250px;
+    }
+
+    #cloud-6 {
+        --_circle-diameter: 200px;
+    }
+
+    .registerpage .contents>#peep-1 {
+        height: 300px;
+        left: 65%;
+    }
+
+    .registerpage .contents>#peep-2 {
+        height: 350px;
+        bottom: -3%;
+        left: 80%;
+    }
+
+    .registerpage .sides {
+        width: 100%;
+    }
+
+    .registerpage .description h1.title {
+        font-size: 5rem;
+    }
+
+    .registerpage .description .desc {
+        font-size: 1.7rem;
+    }
+
+    .registerpage .register :is(div:not(:last-of-type), button.signup) {
+        padding: 7px var(--_padding-sides);
+        width: 400px;
+    }
+
+    .registerpage .register button.signup {
+        margin-top: -13px;
+        height: 48px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .registerpage .contents>#peep-1 {
+        display: none;
+    }
+
+    .registerpage .contents>#peep-2 {
+        display: none;
+    }
+
+    .registerpage .contents #peep-1-title {
+        display: block;
+        height: 75px;
+        top: -11%;
+        left: 20%;
+    }
+
+    .registerpage .contents #peep-2-title {
+        display: block;
+        height: 100px;
+        transform: rotateY(180deg);
+        top: -12%;
+        left: 30%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cloud {
+        --_main-cloud: 300px;
+        --_top-cloud: 150px;
+    }
+
+    #cloud-6 {
+        --_circle-diameter: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .registerpage .description .desc {
+        font-size: 1.5rem;
+    }
+
+    .registerpage .register div label {
+        font-size: 0.8rem;
+    }
+
+    .registerpage .register div input {
+        font-size: 0.8rem;
+    }
+
+    .registerpage .register button.signup {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .registerpage .sides {
+        gap: 27px;
+    }
+
+    .registerpage .contents #peep-1-title {
+        height: 40px;
+        top: -10%;
+        left: 23%;
+    }
+
+    .registerpage .contents #peep-2-title {
+        height: 55px;
+        top: -10%;
+        left: 32%;
+    }
+
+    .registerpage .description h1.title {
+        font-size: 3rem;
+        width: auto;
+    }
+
+    .registerpage .description .desc {
+        font-size: 1.1rem;
+        margin-top: -5px;
+    }
+
+    .registerpage .register {
+        gap: 30px;
+    }
+
+    .registerpage .register :is(div:not(:last-of-type), button.signup) {
+        padding: 7px var(--_padding-sides);
+        width: 300px;
+    }
+
+    .registerpage .register div input {
+        font-size: 0.7rem;
+        height: 25px;
+    }
+
+    .registerpage .register div svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .registerpage .register .action-container {
+        gap: 7px;
+    }
+
+    .registerpage .register button.signup {
+        font-size: 0.85rem;
+        height: 43px;
+    }
+
+    .registerpage .register .login-option {
+        --_font-s: 0.7rem;
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cloud {
+        --_main-cloud: 250px;
+        --_top-cloud: 100px;
+    }
+
+    #cloud-6 {
+        --_circle-diameter: 100px;
+    }
+}
