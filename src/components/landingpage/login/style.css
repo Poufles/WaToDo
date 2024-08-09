@@ -33,7 +33,7 @@
 }
 
 .registerpage .contents {
-    background-image: var(--primary-gradient);
+    background-image: var(--secondary-gradient);
     color: var(--primary-color);
     min-width: 100dvw;
     height: 100dvh;
@@ -46,81 +46,77 @@
 .cloud {
     --_main-cloud: 500px;
     --_top-cloud: 400px;
+    background-color: var(--secondary-color);
     aspect-ratio: 1;
     border-radius: 50%;
     position: absolute;
 }
 
 #cloud-1 {
-    background-color: var(--primary-color);
     width: var(--_main-cloud);
     height: var(--_main-cloud);
-    transform: translate(-50%, -50%);
+    transform: translate(50%, -50%);
     top: 100%;
-    left: 100%;
+    right: 100%;
 }
 
 #cloud-2 {
-    background-color: var(--primary-color);
     width: calc(var(--_main-cloud) / 1.5);
     height: calc(var(--_main-cloud) / 1.5);
-    transform: translate(-50%, -50%);
+    transform: translate(50%, -50%);
     top: 100%;
-    left: calc(100% - var(--_main-cloud) / 2);
+    right: calc(100% - var(--_main-cloud) / 2);
 }
 
 #cloud-3 {
-    background-color: var(--primary-color);
     width: calc(var(--_main-cloud) / 3);
     height: calc(var(--_main-cloud) /3);
-    transform: translate(-50%, -50%);
+    transform: translate(50%, -50%);
     top: 100%;
-    left: calc(100% - var(--_main-cloud) / 1.25);
+    right: calc(100% - var(--_main-cloud) / 1.25);
 }
 
 #cloud-4 {
-    background-color: var(--primary-color);
     width: var(--_top-cloud);
     height: var(--_top-cloud);
-    transform: translate(-50%, 50%);
-    bottom: 100%;
+    transform: translate(-50%, -50%);
+    top: 100%;
     left: 100%;
 }
 
 #cloud-5 {
-    background-color: var(--primary-color);
     width: calc(var(--_top-cloud) / 2);
     height: calc(var(--_top-cloud) / 2);
-    transform: translate(-50%, 50%);
-    bottom: 100%;
+    transform: translate(-50%, -50%);
+    top: 100%;
     left: calc(100% - var(--_top-cloud) / 2);
 }
 
 #cloud-6 {
     --_circle-diameter: 300px;
-    background-color: var(--primary-color);
     width: var(--_circle-diameter);
     height: var(--_circle-diameter);
-    transform: translate(-50%, -50%);
-    top: 100%;
-    left: 0;
+    transform: translate(50%, 50%);
+    bottom: 100%;
+    right: 0;
 }
 
-.registerpage .contents .peep, .registerpage .contents .peep-title {
+.registerpage .contents .peep,
+.registerpage .contents .peep-title {
     position: absolute;
 }
 
 .registerpage .contents>#peep-1 {
-    height: 600px;
+    height: 700px;
     bottom: -10%;
-    left: 55%;
+    left: 11%;
 }
 
 .registerpage .contents>#peep-2 {
-    height: 750px;
+    height: 700px;
     transform: rotateY(180deg);
-    bottom: -12%;
-    left: 70%;
+    bottom: -10%;
+    left: 30%;
 }
 
 .registerpage .logo-container {
@@ -150,7 +146,14 @@
 
 .registerpage .sides {
     height: 100%;
-    width: 60%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.registerpage .sides .container-box {
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -197,7 +200,7 @@
 }
 
 .registerpage .register div:not(:last-of-type) {
-    background-color: var(--accent-color);
+    background-color: var(--black);
     border: 2px solid var(--primary-color);
     display: flex;
     gap: 5px;
@@ -262,7 +265,7 @@
     filter: brightness(0.8);
 }
 
-.registerpage .register>div>p {
+.registerpage .register>div>.validation {
     font-size: 0.8rem;
     transition: var(--t3s);
     position: absolute;
@@ -270,15 +273,15 @@
     right: var(--_padding-sides);
 }
 
-.registerpage .register>div>p.validated {
+.registerpage .register>div>.validation.validated {
     color: var(--_validated);
 }
 
-.registerpage .register>div>p.denied {
+.registerpage .register>div>.validation.denied {
     color: var(--_denied);
 }
 
-.registerpage .register>div>p.required {
+.registerpage .register>div>.validation.required {
     color: var(--_required);
 }
 
@@ -291,13 +294,13 @@
 }
 
 .registerpage .register button.signup {
-    background-image: linear-gradient(120deg, #000 var(--_percent), var(--primary-color) calc(var(--_percent) + 0.5%));
+    background-image: linear-gradient(120deg, var(--primary-color) var(--_percent), var(--secondary-color) calc(var(--_percent) + 0.5%));
     border: 0;
     cursor: pointer;
     font-family: var(--font-stack-normal);
     font-size: 1.2rem;
     height: 52px;
-    transition: 
+    transition:
         var(--t3s),
         --_percent var(--t3s);
 }
@@ -337,7 +340,7 @@
 .registerpage .register .login-option #login {
     background-color: transparent;
     border: 0;
-    color: #dbff0f;
+    color: #53ff0f;
     cursor: pointer;
     font-family: var(--font-stack-normal);
     font-size: var(--_font-s);
@@ -347,15 +350,15 @@
 }
 
 .registerpage .register .login-option #login:hover {
-    color: #53ff0f;
+    color: var(--secondary-color);
 }
 
 .registerpage .author-container {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     bottom: 10px;
     right: 10px;
 }
 
 .author-container .links svg {
-    fill: var(--secondary-color);
+    fill: var(--primary-color);
 }

@@ -1,4 +1,4 @@
-import session from "./module_session.js";
+import session from "./session.js";
 
 const User = function () {
     let name;

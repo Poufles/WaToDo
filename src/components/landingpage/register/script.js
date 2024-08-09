@@ -1,6 +1,7 @@
 const btn = document.querySelector('button');
 const container = document.querySelector('.container.registerpage')
 const reg = document.querySelector('.registerpage .signup');
+const returnpage = document.querySelector('button.return');
 
 btn.addEventListener('mouseup', () => {
     container.classList.remove('initial');
@@ -21,4 +22,10 @@ reg.addEventListener('mousedown', () => {
 
 reg.addEventListener('mouseleave', () => {
     reg.classList.remove('pressed');
+});
+
+returnpage.addEventListener('mouseup', () => {
+    container.classList.remove('final');
+    container.classList.remove('noradius');
+    container.classList.add('initial');
 });

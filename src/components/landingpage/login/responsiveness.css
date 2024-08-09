@@ -1,0 +1,191 @@
+@media screen and (max-width: 1500px) {
+    .registerpage .contents>#peep-1 {
+        left: 6%;
+    }
+
+    .registerpage .contents>#peep-2 {
+        left: 26%;
+    }
+
+    .registerpage .sides {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cloud {
+        --_main-cloud: 400px;
+        --_top-cloud: 250px;
+    }
+
+    #cloud-6 {
+        --_circle-diameter: 200px;
+    }
+
+    .registerpage .contents>#peep-1 {
+        height: 550px;
+        left: 6%;
+    }
+
+    .registerpage .contents>#peep-2 {
+        height: 550px;
+        left: 75%;
+    }
+
+    .registerpage .sides {
+        justify-content: center;
+    }
+
+    .registerpage .description h1.title {
+        font-size: 5rem;
+    }
+
+    .registerpage .description .desc {
+        font-size: 1.7rem;
+    }
+
+    .registerpage .register :is(div:not(:last-of-type), button.signup) {
+        padding: 7px var(--_padding-sides);
+        width: 400px;
+    }
+
+    .registerpage .register button.signup {
+        margin-top: -13px;
+        height: 48px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .registerpage .contents>#peep-1 {
+        display: none;
+    }
+
+    .registerpage .contents>#peep-2 {
+        display: none;
+    }
+
+    .registerpage .contents #peep-1-title {
+        display: block;
+        height: 75px;
+        top: -25%;
+        left: 20%;
+    }
+
+    .registerpage .contents #peep-2-title {
+        display: block;
+        height: 75px;
+        transform: rotateY(180deg);
+        top: -25%;
+        left: 77%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .registerpage .contents #peep-1-title {
+        left: 16%;
+    }
+
+    .registerpage .contents #peep-2-title {
+        left: 80%;
+    }
+
+    .registerpage .description .desc {
+        font-size: 1.5rem;
+    }
+
+    .registerpage .register div label {
+        font-size: 0.8rem;
+    }
+
+    .registerpage .register div input {
+        font-size: 0.8rem;
+    }
+
+    .registerpage .register button.signup {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .registerpage .contents #peep-1-title {
+        top: -14%;
+        left: 33%;
+    }
+    
+    .registerpage .contents #peep-2-title {
+        top: -14%;
+        left: 64%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .registerpage .sides {
+        gap: 27px;
+    }
+
+    .registerpage .contents #peep-1-title {
+        height: 40px;
+        top: -15%;
+        left: 22%;
+    }
+
+    .registerpage .contents #peep-2-title {
+        height: 40px;
+        top: -15%;
+        left: 75%;
+    }
+
+    .registerpage .description h1.title {
+        font-size: 3rem;
+        width: auto;
+    }
+
+    .registerpage .description .desc {
+        font-size: 1.1rem;
+        margin-top: -5px;
+    }
+
+    .registerpage .register {
+        gap: 30px;
+    }
+
+    .registerpage .register :is(div:not(:last-of-type), button.signup) {
+        padding: 7px var(--_padding-sides);
+        width: 300px;
+    }
+
+    .registerpage .register div input {
+        font-size: 0.7rem;
+        height: 25px;
+    }
+
+    .registerpage .register div svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .registerpage .register .action-container {
+        gap: 7px;
+    }
+
+    .registerpage .register button.signup {
+        font-size: 0.85rem;
+        height: 43px;
+    }
+
+    .registerpage .register .login-option {
+        --_font-s: 0.7rem;
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cloud {
+        --_main-cloud: 275px;
+        --_top-cloud: 275px;
+    }
+
+    #cloud-6 {
+        --_circle-diameter: 100px;
+    }
+}

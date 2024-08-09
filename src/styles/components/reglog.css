@@ -1,0 +1,469 @@
+.container:is(.loginpage, .registerpage) {
+    border-bottom-right-radius: 100%;
+    overflow: hidden;
+    transition: var(--t3s);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container:is(.loginpage, .registerpage).initial {
+    width: 0px;
+    height: 0px;
+}
+
+.container:is(.loginpage, .registerpage).final {
+    width: 100dvw;
+    height: 100dvh;
+}
+
+.container:is(.loginpage, .registerpage).noradius {
+    border-bottom-right-radius: 0% !important;
+}
+
+
+:is(.loginpage, .registerpage) .contents {
+    color: var(--primary-color);
+    min-width: 100dvw;
+    height: 100dvh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.registerpage .contents {
+    background-image: var(--primary-gradient);
+}
+
+.loginpage .contents {
+    background-image: var(--secondary-gradient);
+    
+}
+
+.cloud {
+    --_main-cloud: 500px;
+    --_top-cloud: 400px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.loginpage .cloud {
+    background-color: var(--secondary-color);
+}
+
+.registerpage .cloud {
+    background-color: var(--primary-color);
+}
+
+#cloud-1 {
+    width: var(--_main-cloud);
+    height: var(--_main-cloud);
+    top: 100%;
+}
+
+.loginpage #cloud-1 {
+    transform: translate(50%, -50%);
+    right: 100%;
+}
+
+.registerpage #cloud-1 {
+    transform: translate(-50%, -50%);
+    left: 100%;
+}
+
+#cloud-2 {
+    width: calc(var(--_main-cloud) / 1.5);
+    height: calc(var(--_main-cloud) / 1.5);
+    top: 100%;
+}
+
+.loginpage #cloud-2 {
+    transform: translate(50%, -50%);
+    right: calc(100% - var(--_main-cloud) / 2);
+}
+
+.registerpage #cloud-2 {
+    transform: translate(-50%, -50%);
+    left: calc(100% - var(--_main-cloud) / 2);
+}
+
+#cloud-3 {
+    width: calc(var(--_main-cloud) / 3);
+    height: calc(var(--_main-cloud) /3);
+    top: 100%;
+}
+
+.loginpage #cloud-3 {
+    transform: translate(50%, -50%);
+    right: calc(100% - var(--_main-cloud) / 1.25);
+}
+
+.registerpage #cloud-3 {
+    transform: translate(-50%, -50%);
+    left: calc(100% - var(--_main-cloud) / 1.25);
+}
+
+#cloud-4 {
+    width: var(--_top-cloud);
+    height: var(--_top-cloud);
+    left: 100%;
+}
+
+.loginpage #cloud-4 {
+    transform: translate(-50%, -50%);
+    top: 100%;
+}
+
+.registerpage #cloud-4 {
+    transform: translate(-50%, 50%);
+    bottom: 100%;
+}
+
+#cloud-5 {
+    width: calc(var(--_top-cloud) / 2);
+    height: calc(var(--_top-cloud) / 2);
+    left: calc(100% - var(--_top-cloud) / 2);
+}
+
+.loginpage #cloud-5 {
+    transform: translate(-50%, -50%);
+    top: 100%;
+}
+
+.registerpage #cloud-5 {
+    transform: translate(-50%, 50%);
+    bottom: 100%;
+}
+
+#cloud-6 {
+    --_circle-diameter: 300px;
+    width: var(--_circle-diameter);
+    height: var(--_circle-diameter);
+}
+
+.loginpage #cloud-6 {
+    transform: translate(50%, 50%);
+    bottom: 100%;
+    right: 0;
+}
+
+.registerpage #cloud-6 {
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 0;
+}
+
+:is(.loginpage, .registerpage) .contents .peep,
+.registerpage .contents .peep-title {
+    position: absolute;
+}
+
+.loginpage .contents>#peep-1 {
+    height: 700px;
+    bottom: -10%;
+    left: 11%;
+}
+
+.registerpage .contents>#peep-1 {
+    height: 600px;
+    bottom: -10%;
+    left: 55%;
+}
+
+.loginpage .contents>#peep-2 {
+    height: 700px;
+    transform: rotateY(180deg);
+    bottom: -10%;
+    left: 30%;
+}
+
+.registerpage .contents>#peep-2 {
+    height: 750px;
+    transform: rotateY(180deg);
+    bottom: -12%;
+    left: 70%;
+}
+
+:is(.loginpage, .registerpage) .logo-container {
+    height: max-content;
+}
+
+:is(.loginpage, .registerpage) button.return {
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+    cursor: pointer;
+    width: max-content;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+:is(.loginpage, .registerpage) button.return svg {
+    fill: var(--primary-color);
+    width: 15px;
+    height: 15px;
+}
+
+:is(.loginpage, .registerpage) button.return .title {
+    font-size: 0.65rem;
+}
+
+:is(.loginpage, .registerpage) .sides {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.loginpage .sides {
+    width: 90%;
+}
+
+.registerpage .sides {
+    width: 55%;
+}
+
+:is(.loginpage, .registerpage) .sides .container-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+:is(.loginpage, .registerpage) .description {
+    position: relative;
+}
+
+:is(.loginpage, .registerpage) .description .peep-title {
+    display: none;
+}
+
+:is(.loginpage, .registerpage) .description h1.title {
+    font-family: var(--font-stack-title);
+    font-size: 6rem;
+    text-align: center;
+}
+
+:is(.loginpage, .registerpage) .description .desc {
+    font-size: 2rem;
+    margin-top: -15px;
+    text-align: center;
+}
+
+:is(.loginpage, .registerpage) .register {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+:is(.loginpage, .registerpage) .register :is(div:not(:last-of-type), button.signup) {
+    --_validated: #0fff27;
+    --_denied: #ffad3b;
+    --_required: #ff4b4b;
+    --_margin-label-input: 4px;
+    --_padding-sides: 15px;
+    border-radius: 30px;
+    padding: 9px var(--_padding-sides);
+    width: 500px;
+    transition: var(--t3s);
+}
+
+:is(.loginpage, .registerpage) .register div:not(:last-of-type) {
+    border: 2px solid var(--primary-color);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+}
+
+.loginpage .register div:not(:last-of-type) {
+    background-color: var(--black);
+}
+
+.registerpage .register div:not(:last-of-type) {
+    background-color: var(--accent-color);
+}
+
+:is(.loginpage, .registerpage) .register div:has(input:focus) {
+    box-shadow: 0 0 15px -2px var(--primary-color);
+}
+
+:is(.loginpage, .registerpage) .register div.validated {
+    border: 2px solid var(--_validated);
+    box-shadow: 0 0 15px -2px var(--_validated);
+}
+
+:is(.loginpage, .registerpage) .register div.denied {
+    border: 2px solid var(--_denied);
+    box-shadow: 0 0 15px -2px var(--_denied);
+}
+
+:is(.loginpage, .registerpage) .register div.required {
+    border: 2px solid var(--_required);
+    box-shadow: 0 0 15px -2px var(--_required);
+}
+
+:is(.loginpage, .registerpage) .register div label {
+    position: absolute;
+    bottom: calc(100% + var(--_margin-label-input));
+    left: var(--_padding-sides);
+}
+
+:is(.loginpage, .registerpage) .register div input {
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+:is(.loginpage, .registerpage) .register div input {
+    height: 30px;
+}
+
+:is(.loginpage, .registerpage) .register div button.eye {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+:is(.loginpage, .registerpage) .register div svg {
+    fill: var(--primary-color);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+:is(.loginpage, .registerpage) .register div input::placeholder {
+    color: var(--primary-color);
+    filter: brightness(0.8);
+}
+
+:is(.loginpage, .registerpage) .register>div>p {
+    font-size: 0.8rem;
+    transition: var(--t3s);
+    position: absolute;
+    bottom: calc(100% + var(--_margin-label-input));
+    right: var(--_padding-sides);
+}
+
+:is(.loginpage, .registerpage) .register>div>p.validated {
+    color: var(--_validated);
+}
+
+:is(.loginpage, .registerpage) .register>div>p.denied {
+    color: var(--_denied);
+}
+
+:is(.loginpage, .registerpage) .register>div>p.required {
+    color: var(--_required);
+}
+
+:is(.loginpage, .registerpage) .register .action-container {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+}
+
+:is(.loginpage, .registerpage) .register button.signup {
+    border: 0;
+    cursor: pointer;
+    font-family: var(--font-stack-normal);
+    font-size: 1.2rem;
+    height: 52px;
+    transition:
+        var(--t3s),
+        --_percent var(--t3s);
+}
+
+.loginpage .register button.signup {
+    background-image: linear-gradient(120deg, var(--primary-color) var(--_percent), var(--secondary-color) calc(var(--_percent) + 0.5%));
+}
+
+.registerpage .register button.signup {
+    background-image: linear-gradient(120deg, #000 var(--_percent), var(--primary-color) calc(var(--_percent) + 0.5%));
+}
+
+:is(.loginpage, .registerpage) .register button.signup:hover {
+    --_percent: 50%;
+}
+
+:is(.loginpage, .registerpage) .register button.signup.active {
+    --_percent: 100%;
+}
+
+:is(.loginpage, .registerpage) .register button.signup.pressed {
+    transform: scale(0.9);
+}
+
+:is(.loginpage, .registerpage) .register button.signup p {
+    color: var(--primary-color);
+    mix-blend-mode: difference;
+}
+
+@property --_percent {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+:is(.loginpage, .registerpage) .register .login-option {
+    --_font-s: 0.85rem;
+    font-size: var(--_font-s);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+:is(.loginpage, .registerpage) .register .login-option #login {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--font-stack-normal);
+    font-size: var(--_font-s);
+    padding: 0;
+    text-decoration: underline;
+    transition: var(--t3s);
+}
+
+.loginpage .register .login-option #login {
+    color: #53ff0f;
+}
+
+.registerpage .register .login-option #login {
+    color: #dbff0f;
+}
+
+.loginpage .register .login-option #login:hover {
+    color: var(--secondary-color);
+}
+
+.registerpage .register .login-option #login:hover {
+    color: #53ff0f;
+}
+
+.loginpage .author-container {
+    color: var(--primary-color);
+}
+
+.registerpage .author-container {
+    color: var(--secondary-color);
+}
+
+.loginpage .author-container .links svg {
+    fill: var(--primary-color);
+}
+
+.registerpage .author-container .links svg {
+    fill: var(--secondary-color);
+}

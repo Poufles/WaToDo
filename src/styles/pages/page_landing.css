@@ -1,0 +1,232 @@
+.container.landing {
+    height: 100dvh;
+    overflow: hidden;
+    position: relative;
+}
+
+.landing .circle {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: var(--t3s);
+    position: absolute;
+}
+
+.landing #circle-1 {
+    --_circle-diameter: 150px;
+    background-color: var(--secondary-color);
+    width: var(--_circle-diameter);
+    height: var(--_circle-diameter);
+    transform: translate(-50%, 50%);
+    bottom: 100%;
+    left: 100%;
+}
+
+.landing #circle-2 {
+    --_circle-diameter: 350px;
+    background-color: var(--accent-color);
+    width: var(--_circle-diameter);
+    height: var(--_circle-diameter);
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: calc(100% - var(--_circle-diameter) / 1.75);
+}
+
+.landing #circle-3 {
+    --_circle-diameter: 550px;
+    background-color: var(--secondary-color);
+    width: var(--_circle-diameter);
+    height: var(--_circle-diameter);
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 100%;
+}
+
+.landing #circle-4 {
+    --_circle-diameter: 300px;
+    background-color: var(--secondary-color);
+    width: var(--_circle-diameter);
+    height: var(--_circle-diameter);
+    transform: translate(50%, -50%);
+    top: 100%;
+    right: 100%;
+}
+
+.landing #circle-load {
+    background-color: var(--secondary-color);
+    width: 0px;
+    height: 0px;
+    transform: translate(50%, 50%);
+    right: 100%;
+    bottom: 100%;
+    z-index: 1;
+}
+
+.landing img {
+    height: 475px;
+    position: absolute;
+    bottom: -10%;
+    left: 20%;
+}
+
+.landing>.contents {
+    --_margin: 30px;
+    padding: var(--_margin);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.landing .contents>.logo-container {
+    height: max-content;
+}
+
+.landing .container.landing-action {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing .landing-action .text-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing .text-details .title {
+    background-image: radial-gradient(circle at center left, var(--_lc), var(--_rc));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: var(--font-stack-title);
+    font-size: 12rem;
+    padding: 0 9px;
+    transition:
+        --_lc var(--t3s),
+        --_rc var(--t3s);
+}
+
+.landing .text-details .desc {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: -30px;
+    width: 600px;
+}
+
+.landing .landing-action .action-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing .action-container #register {
+    background-image: radial-gradient(circle at center left, var(--_lc), var(--_rc));
+    border: 0;
+    border-radius: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 13px 27px;
+    transition:
+        var(--t3s),
+        --_lc var(--t3s),
+        --_rc var(--t3s);
+}
+
+.landing .action-container :is(#register:hover, #register.active) {
+    --_lc: #4C2B8E;
+    --_rc: #7306D8;
+}
+
+
+.landing .action-container #register.pressed {
+    transform: scale(0.90);
+}
+
+.landing:has(.action-container #register:hover) .text-details .title,
+.landing .text-details .title.active {
+    --_lc: #4C2B8E;
+    --_rc: #7306D8;
+}
+
+.landing:has(.action-container #register:hover) #circle-1,
+.landing #circle-1.active {
+    background-color: var(--accent-color);
+    width: 250px;
+    height: 250px;
+}
+
+.landing:has(.action-container #register:hover) #circle-2,
+.landing #circle-2.active {
+    background-color: var(--secondary-color);
+    --_circle-diameter: 450px;
+}
+
+.landing:has(.action-container #register:hover) #circle-3,
+.landing #circle-3.active {
+    background-color: var(--accent-color);
+    width: 650px;
+    height: 650px;
+}
+
+.landing:has(.action-container #register:hover) #circle-4,
+.landing #circle-4.active {
+    background-color: var(--accent-color);
+    width: 400px;
+    height: 400px;
+}
+
+.landing:has(.action-container #register:hover) #circle-load {
+    width: 50px;
+    height: 50px;
+}
+
+@property --_lc {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #7306D8;
+}
+
+@property --_rc {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #4C2B8E;
+}
+
+.landing .action-container .login-option {
+    --_font-s: 0.85rem;
+    font-size: var(--_font-s);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing .login-option #login {
+    background-color: transparent;
+    border: 0;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-family: var(--font-stack-normal);
+    font-size: var(--_font-s);
+    padding: 0;
+    text-decoration: underline;
+    transition: var(--t3s);
+}
+
+.landing .login-option #login:hover {
+    color: var(--alt-color);
+}
+
+.landing .login-option #login.active {
+    color: var(--accent-color);
+}
+
+@import '../responsive/landing.css'
